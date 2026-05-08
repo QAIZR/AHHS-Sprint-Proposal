@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helpful In The Hire &middot; Ace Hardware Home Services Sprint &middot; QAIZR</title>
+<meta name="description" content="A five-day Agent Installation Sprint for Michelle Young, President of Ace Hardware Home Services. Live cohort of senior operators. Working agents by Day 4. Mon May 18 through Fri May 22, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Archivo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ace-red: #D40029;
+    --ace-red-mid: #9E0623;
+    --ace-red-deep: #5B0014;
+    --ink: #1a1a1a;
+    --ink-soft: #333333;
+    --paper: #ffffff;
+    --paper-warm: #faf8f6;
+    --gray-100: #F8F8F8;
+    --gray-200: #EFEFEF;
+    --gray-400: #c6c6c6;
+    --gray-600: #6b6b6b;
+    --stone: #8a8680;
+    --display: "Archivo", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* WIDOW CONTROL: every headline rebalances so no single word lands alone on the last line */
+  h1, h2, h3, h4,
+  .hero h1, .hero .engineered,
+  .s-header h2, .s-header .lede,
+  .tldr-body, .tldr-tag,
+  .char-cell .cv,
+  .problem-row .pr-body h3, .problem-row .pr-body blockquote,
+  .compare-cell h4,
+  .cat-framer p,
+  .guide-col h3, .guide-col p,
+  .proof-cell .pp,
+  .week-row .wk-title, .week-row .wk-body,
+  .plan-callout .pcb,
+  .promise-inner blockquote, .promise-inner p,
+  .failure-cell h4,
+  .success-row .sw, .success-row .sb,
+  .close-final h3, .close-final p, .close-final .cf-recap p,
+  .hero-meta .hm .v {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  p, li, .compare-cell p, .failure-cell p, .week-row .wk-body, .success-row .sb {
+    text-wrap: pretty;
+  }
+  a { color: inherit; text-decoration: none; }
+  p { margin: 0 0 18px 0; }
+  strong { font-weight: 700; }
+
+  /* SHARED RULES */
+  .rule-red { width: 56px; height: 2px; background: var(--ace-red); margin: 0 0 28px 0; }
+  .rule-ink { width: 56px; height: 2px; background: var(--ink); margin: 0 0 28px 0; }
+  .rule-ivory { width: 56px; height: 2px; background: var(--paper-warm); margin: 0 0 28px 0; }
+
+  /* SECTION TAG / EYEBROW */
+  .sec-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 28px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ace-red);
+  }
+  .band-ink .sec-tag { color: #fff; border-color: #fff; }
+  .band-red .sec-tag { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+  /* SECTION SHELL */
+  section { width: 100vw; padding: 120px 6vw; }
+  .band-paper { background: var(--paper); color: var(--ink); }
+  .band-warm { background: var(--paper-warm); color: var(--ink); }
+  .band-gray { background: var(--gray-100); color: var(--ink); }
+  .band-ink { background: var(--ink); color: #fff; }
+  .band-red { background: var(--ace-red); color: #fff; position: relative; overflow: hidden; }
+  .band-red::before {
+    content: ""; position: absolute;
+    right: -10%; top: -20%;
+    width: 70%; height: 140%;
+    background: var(--ace-red-deep);
+    transform: skewX(-18deg);
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .band-red .s-inner { position: relative; z-index: 1; }
+
+  .s-inner { max-width: 1640px; margin: 0 auto; }
+  .s-inner--narrow { max-width: 1100px; margin: 0 auto; }
+  .s-header { margin-bottom: 56px; }
+  .s-header h2 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.0;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+  }
+  .band-ink .s-header h2 { color: #fff; }
+  .band-red .s-header h2 { color: #fff; }
+  .s-header h2 .red { color: var(--ace-red); }
+  .band-ink .s-header h2 .red { color: var(--ace-red); }
+  .s-header .lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--gray-600);
+  }
+  .band-ink .s-header .lede { color: rgba(255,255,255,0.78); }
+  .band-red .s-header .lede { color: rgba(255,255,255,0.92); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+  }
+  .hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 6vw 120px 6vw;
+    position: relative; z-index: 2;
+  }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(212, 0, 41, 0.42) 0%, rgba(91, 0, 20, 0.55) 35%, var(--ink) 78%),
+      linear-gradient(135deg, var(--ink) 0%, #2a0a12 60%, var(--ace-red-deep) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 4vw;
+  }
+  .hero-right::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(80vw, 900px);
+    height: min(80vw, 900px);
+    background:
+      conic-gradient(from 215deg at 50% 50%, var(--ace-red) 0deg, transparent 130deg);
+    opacity: 0.38;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .hero-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(255,255,255,0.04) 0 1px, transparent 2px),
+      radial-gradient(circle at 78% 80%, rgba(255,255,255,0.04) 0 1px, transparent 2px);
+    background-size: 56px 56px, 72px 72px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* Real Ace Hardware Home Services logo on a white card, sized to balance the hero headline mass */
+  .hero-mark {
+    position: relative;
+    width: min(82%, 560px);
+    padding: 3rem 3.4rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow:
+      0 40px 90px rgba(0, 0, 0, 0.55),
+      0 0 80px rgba(212, 0, 41, 0.22),
+      0 0 0 1px rgba(255,255,255,0.06);
+    z-index: 3;
+  }
+  .hero-mark img { width: 100%; height: auto; display: block; }
+  .hero-kicker {
+    position: relative;
+    margin-top: 2.4rem;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    z-index: 3;
+  }
+  .hero-kicker .red-pip {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--ace-red);
+    border-radius: 50%;
+    margin: 0 12px 2px 12px;
+    vertical-align: middle;
+  }
+  .hero-watermark {
+    position: absolute;
+    right: 4vw; bottom: 4vh;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(56px, 6vw, 96px);
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.08);
+    z-index: 2;
+  }
+
+  .hero .h-label {
+    font-weight: 500; font-size: 12px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .hero .h-label .h-line { display: block; }
+  .hero .h-rule {
+    width: 56px; height: 2px;
+    background: var(--ace-red);
+    margin-bottom: 36px;
+  }
+  .hero .h-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(48px, 5.6vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.038em;
+    color: #fff;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: rgba(255,255,255,0.55);
+    font-weight: 900;
+  }
+  .hero .engineered {
+    font-family: var(--display);
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: #fff;
+    margin-bottom: 36px;
+    max-width: 700px;
+  }
+  .hero .engineered .red-tint {
+    color: var(--ace-red);
+  }
+  .hero-clarity {
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 36px;
+    max-width: 640px;
+    text-wrap: balance;
+  }
+  .hero-clarity strong { color: #fff; font-weight: 700; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 18px 32px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
+    white-space: nowrap;
+  }
+  .btn--red { background: var(--ace-red); color: #fff; border-color: var(--ace-red); box-shadow: 0 8px 24px rgba(212,0,41,0.32); }
+  .btn--red:hover { background: var(--ace-red-deep); border-color: var(--ace-red-deep); transform: translateY(-2px); }
+  .btn--ghost { background: transparent; color: rgba(255,255,255,0.78); border-color: rgba(255,255,255,0.28); }
+  .btn--ghost:hover { color: #fff; border-color: #fff; }
+  .btn--ink { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .btn--ink:hover { background: #000; border-color: #000; }
+  .btn--outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--outline:hover { background: var(--ink); color: #fff; }
+
+  .hero-guarantee {
+    margin-top: 22px;
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,0.32);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-meta {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 720px;
+  }
+  .hero-meta .hm { display: flex; flex-direction: column; gap: 6px; }
+  .hero-meta .hm .k {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .hero-meta .hm .v {
+    font-size: 15px; font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.003em;
+    line-height: 1.4;
+  }
+
+  /* TLDR BAND */
+  .tldr-band {
+    background: var(--paper-warm);
+    padding: 56px 6vw;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .tldr-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .tldr-tag {
+    font-family: var(--display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ace-red);
+  }
+  .tldr-tag .tldr-sub {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--gray-600);
+    letter-spacing: 0.22em;
+    font-family: var(--body);
+  }
+  .tldr-body {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .tldr-body strong { font-weight: 700; }
+  .tldr-body .red { color: var(--ace-red); font-weight: 700; }
+  @media (max-width: 1024px) {
+    .tldr-inner { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* CHARACTER GRID */
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    margin-top: 32px;
+  }
+  .char-cell { padding: 36px 28px 36px 0; }
+  .char-cell + .char-cell {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 28px;
+  }
+  .char-cell .ck {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 14px;
+  }
+  .char-cell .cv {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.45;
+    letter-spacing: -0.008em;
+  }
+
+  /* PROBLEM ROWS */
+  .problem-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    padding: 56px 0;
+    border-top: 1px solid var(--gray-200);
+    align-items: start;
+  }
+  .problem-row:first-of-type { border-top: 2px solid var(--ink); }
+  .problem-row:last-of-type { border-bottom: 2px solid var(--ink); }
+  .problem-row .pr-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+  }
+  .problem-row .pr-tag .pr-sub {
+    display: block;
+    margin-top: 10px;
+    font-weight: 400;
+    color: var(--gray-600);
+    font-family: var(--body);
+    letter-spacing: 0.22em;
+    font-size: 10px;
+  }
+  .problem-row .pr-body h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .problem-row .pr-body blockquote {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.4;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    padding-left: 20px;
+    border-left: 3px solid var(--ace-red);
+    margin: 20px 0 24px 0;
+  }
+  .problem-row .pr-body p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--gray-600);
+  }
+
+  /* COMPARE GRID */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .compare-cell { padding: 36px 32px 36px 0; }
+  .compare-cell:nth-child(even) {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 32px; padding-right: 0;
+  }
+  .compare-cell:nth-child(n+3) { border-top: 1px solid var(--gray-200); padding-top: 36px; }
+  .compare-cell .cmp-tag {
+    font-family: var(--display);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 10px;
+  }
+  .compare-cell .cmp-cost {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .compare-cell h4 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .compare-cell p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin: 0;
+  }
+  .compare-cell p strong { color: var(--ink); }
+
+  /* CATEGORY FRAMER */
+  .cat-framer {
+    margin: 28px 0 16px 0;
+    padding: 24px 28px;
+    background: var(--paper);
+    border-left: 4px solid var(--ace-red);
+  }
+  .cat-framer .cat-tag {
+    font-family: var(--display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 10px;
+  }
+  .cat-framer p {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .cat-framer.alt { border-left-color: var(--ink); }
+  .cat-framer.muted { border-left-color: var(--gray-400); background: var(--paper-warm); }
+  .cat-framer.muted .cat-tag { color: var(--gray-600); }
+
+  /* GUIDE SPLIT */
+  .guide-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 48px;
+    border-top: 2px solid var(--ink);
+  }
+  .guide-col { padding: 56px 40px 16px 0; }
+  .guide-col + .guide-col {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 40px;
+  }
+  .guide-col .gc-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 24px;
+  }
+  .guide-col .gc-tag .gc-sub {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--gray-600);
+    font-family: var(--body);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .guide-col h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(26px, 2.4vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.026em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .guide-col p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--gray-600);
+  }
+
+  /* PROOF GRID */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 56px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .proof-cell { padding: 36px 28px 36px 0; }
+  .proof-cell + .proof-cell {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 28px;
+  }
+  .proof-cell .pv {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ace-red);
+    margin-bottom: 12px;
+  }
+  .proof-cell .pk {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .proof-cell .pp {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  /* ATTRS BAND */
+  .attrs-band {
+    margin-top: 56px;
+    padding: 36px 32px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+  }
+  .attrs-tag {
+    font-family: var(--display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 10px;
+  }
+  .attrs-tag .attrs-sub {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--gray-600);
+    font-family: var(--body);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .attrs-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 24px;
+    border-top: 1px solid var(--ink);
+  }
+  .attrs-cell {
+    padding: 24px 20px 0 0;
+    border-right: 1px solid var(--gray-200);
+  }
+  .attrs-cell:last-child { border-right: none; }
+  .attrs-cell .ak {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .attrs-cell p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  /* PROOF QUOTES BAND */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .quote-cell { padding: 36px 28px 36px 0; }
+  .quote-cell + .quote-cell {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 28px;
+  }
+  .quote-cell blockquote {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.014em;
+    color: var(--ink);
+    margin-bottom: 18px;
+    padding: 0;
+    border: none;
+    text-wrap: balance;
+  }
+  .quote-cell .qa {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .quote-cell .qm {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    font-weight: 600;
+  }
+  @media (max-width: 1024px) {
+    .quote-grid { grid-template-columns: 1fr; }
+    .quote-cell + .quote-cell { border-left: none; border-top: 1px solid var(--gray-200); padding-left: 0; padding-top: 36px; }
+    .quote-cell { padding: 36px 0; }
+  }
+
+  /* PLAN CALLOUTS */
+  .plan-callout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    padding: 36px 0;
+    border-top: 1px solid var(--gray-200);
+    align-items: start;
+    margin-top: 24px;
+  }
+  .plan-callout:first-of-type { border-top: 2px solid var(--ink); margin-top: 32px; }
+  .plan-callout .pcl {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+  }
+  .plan-callout .pcl-sub {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--gray-600);
+    font-family: var(--body);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .plan-callout .pcb {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .plan-callout .pcb strong { font-weight: 700; }
+
+  /* WEEK ROWS */
+  .weeks { margin-top: 56px; }
+  .week-row {
+    display: grid;
+    grid-template-columns: 220px 280px 1fr;
+    gap: 32px;
+    padding: 40px 0;
+    border-top: 1px solid var(--gray-200);
+    align-items: start;
+  }
+  .week-row:first-child { border-top: 2px solid var(--ink); }
+  .week-row:last-child { border-bottom: 2px solid var(--ink); }
+  .week-row .wk-num {
+    font-family: var(--display);
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+  }
+  .week-row .wk-title {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .week-row .wk-body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray-600);
+  }
+  .week-row .wk-body strong { color: var(--ink); }
+
+  /* OFFER */
+  .price-block {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) 1.6fr;
+    gap: 56px;
+    align-items: center;
+    padding: 48px 0 56px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--gray-200);
+    margin-top: 24px;
+  }
+  .price-block-left { display: flex; flex-direction: column; gap: 14px; }
+  .price-block-right h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(24px, 2.2vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .price-block-right p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--gray-600);
+    margin: 0;
+  }
+  @media (max-width: 1024px) {
+    .price-block { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .cta-split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    padding: 56px 0 0 0;
+    margin-top: 0;
+  }
+  .cta-col .cta-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 18px;
+  }
+  .cta-col .cta-sub {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--gray-600);
+    font-family: var(--body);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .value-anchor {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  .value-anchor th, .value-anchor td {
+    text-align: left;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--ink);
+    vertical-align: top;
+  }
+  .value-anchor th {
+    font-family: var(--display);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    border-bottom: 2px solid var(--ink);
+  }
+  .value-anchor .va-amt { text-align: right; font-weight: 600; white-space: nowrap; }
+  .value-anchor .va-total td {
+    border-top: 2px solid var(--ink);
+    border-bottom: none;
+    padding-top: 16px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .cta-price {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(72px, 8vw, 124px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ace-red);
+    margin: 0;
+  }
+  .cta-price .d { font-size: 0.55em; vertical-align: top; margin-right: 4px; }
+  .cta-price-sub {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink);
+    margin: 0;
+  }
+  .cta-col h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .cta-col p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--gray-600);
+    margin-bottom: 18px;
+  }
+  .value-math-callout {
+    margin: 22px 0 26px 0;
+    padding: 22px 26px;
+    background: var(--paper-warm);
+    border-left: 4px solid var(--ace-red);
+  }
+  .value-math-callout .vm-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 10px;
+  }
+  .value-math-callout p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .value-math-callout p strong { font-weight: 700; }
+  .offer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .offer-list li {
+    position: relative;
+    padding: 12px 0 12px 28px;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .offer-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 18px;
+    width: 14px; height: 2px;
+    background: var(--ace-red);
+  }
+  .offer-list li:last-child { border-bottom: none; }
+
+  /* FAILURE GRID */
+  .failure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .failure-cell { padding: 36px 32px 36px 0; }
+  .failure-cell:nth-child(even) {
+    border-left: 1px solid var(--gray-200);
+    padding-left: 32px; padding-right: 0;
+  }
+  .failure-cell:nth-child(n+3) { border-top: 1px solid var(--gray-200); padding-top: 36px; }
+  .failure-cell .fk {
+    font-family: var(--display);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 12px;
+  }
+  .failure-cell h4 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.020em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .failure-cell p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  /* SUCCESS ROWS */
+  .success-grid { margin-top: 32px; }
+  .success-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 2fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--gray-200);
+    align-items: start;
+  }
+  .success-row:first-of-type { border-top: 2px solid var(--ink); }
+  .success-row:last-of-type { border-bottom: 2px solid var(--ink); }
+  .success-row .sk {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+  }
+  .success-row .sw {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .success-row .sb {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray-600);
+  }
+
+  /* NEXT STEPS BLOCK */
+  .next-steps {
+    margin: 28px 0 36px 0;
+    padding: 24px 28px;
+    background: var(--gray-100);
+    border-left: 4px solid var(--ink);
+  }
+  .next-steps .ns-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 14px;
+  }
+  .next-steps ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: ns;
+  }
+  .next-steps li {
+    position: relative;
+    padding: 10px 0 10px 36px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    counter-increment: ns;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .next-steps li:last-child { border-bottom: none; }
+  .next-steps li::before {
+    content: counter(ns, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 12px;
+    font-family: var(--display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ace-red);
+  }
+  .next-steps li strong { font-weight: 700; }
+
+  /* CLOSE FINAL */
+  .close-final {
+    margin-top: 56px;
+    padding: 72px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .close-final .cf-tag {
+    font-family: var(--display);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ace-red);
+    margin-bottom: 24px;
+  }
+  .close-final .cf-recap {
+    margin: 0 0 36px 0;
+    padding: 22px 26px;
+    border-left: 4px solid var(--ace-red);
+    background: var(--paper);
+  }
+  .close-final .cf-recap .cf-recap-tag {
+    font-family: var(--display);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 10px;
+  }
+  .close-final .cf-recap p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .close-final h3 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.0;
+    letter-spacing: -0.034em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .close-final h3 .red { color: var(--ace-red); }
+  .close-final p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin-bottom: 22px;
+  }
+  .close-final .cf-sign {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.003em;
+    margin-top: 14px;
+  }
+  .close-final .cf-actions {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  /* PROMISE BAND */
+  .promise-band {
+    background: var(--ace-red);
+    color: #fff;
+    padding: 80px 6vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .promise-band::before {
+    content: ""; position: absolute;
+    right: -10%; top: -20%;
+    width: 70%; height: 140%;
+    background: var(--ace-red-deep);
+    transform: skewX(-18deg);
+    opacity: 0.42;
+  }
+  .promise-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+  .promise-inner .sec-tag { color: #fff; border-color: rgba(255,255,255,0.6); }
+  .promise-inner blockquote {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+    color: #fff;
+    max-width: 1000px;
+    margin: 0 0 28px 0;
+  }
+  .promise-inner .red-bow {
+    display: inline-block;
+    position: relative;
+    padding: 0 0.4rem;
+  }
+  .promise-inner .red-bow::before {
+    content: ""; position: absolute; inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: -1;
+    transform: skewX(-8deg);
+  }
+  .promise-inner p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.92);
+    margin: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 36px 6vw 44px 6vw;
+    background: var(--ink);
+    color: #fff;
+    border-top: 2px solid var(--ace-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  footer .f-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    max-width: 920px;
+  }
+  footer .f-email {
+    display: inline-block;
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border-bottom: 2px solid var(--ace-red);
+    padding-bottom: 4px;
+    text-decoration: none;
+  }
+  footer .f-email:hover { color: var(--ace-red); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-content { padding: 80px 6vw 96px 6vw; }
+    .hero-meta { grid-template-columns: 1fr 1fr; }
+    .char-grid { grid-template-columns: 1fr 1fr; }
+    .char-cell + .char-cell { border-left: none; padding-left: 0; }
+    .char-cell { padding: 28px 0; border-top: 1px solid var(--gray-200); }
+    .char-cell:first-child, .char-cell:nth-child(2) { border-top: none; }
+    .char-cell:nth-child(2) { border-left: 1px solid var(--gray-200); padding-left: 28px; }
+    .char-cell:nth-child(4) { border-left: 1px solid var(--gray-200); padding-left: 28px; }
+    .problem-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .compare-cell:nth-child(even),
+    .compare-cell:nth-child(n+3) { border-left: none; padding-left: 0; padding-right: 0; padding-top: 28px; }
+    .compare-cell:nth-child(n+2) { border-top: 1px solid var(--gray-200); padding-top: 28px; }
+    .guide-split { grid-template-columns: 1fr; }
+    .guide-col + .guide-col { border-left: none; border-top: 1px solid var(--gray-200); padding-left: 0; padding-top: 40px; margin-top: 16px; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .proof-cell + .proof-cell { border-left: none; border-top: 1px solid var(--gray-200); padding-left: 0; padding-top: 36px; }
+    .proof-cell { padding: 36px 0; }
+    .attrs-grid { grid-template-columns: 1fr; }
+    .attrs-cell { border-right: none; border-top: 1px solid var(--gray-200); padding: 20px 0 0 0; }
+    .attrs-cell:first-child { border-top: none; }
+    .plan-callout { grid-template-columns: 1fr; gap: 16px; }
+    .week-row { grid-template-columns: 1fr; gap: 12px; }
+    .cta-split { grid-template-columns: 1fr; gap: 40px; }
+    .failure-grid { grid-template-columns: 1fr; }
+    .failure-cell:nth-child(even),
+    .failure-cell:nth-child(n+3) { border-left: none; padding-left: 0; padding-right: 0; }
+    .failure-cell:nth-child(n+2) { border-top: 1px solid var(--gray-200); padding-top: 36px; }
+    .success-row { grid-template-columns: 1fr; gap: 10px; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 80px 6vw; }
+    .hero-meta { grid-template-columns: 1fr; }
+    .char-grid { grid-template-columns: 1fr; }
+    .char-cell:nth-child(n+2) { border-left: none; padding-left: 0; border-top: 1px solid var(--gray-200); }
+    .hero-actions .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="h-label">
+      <span class="h-line">For Michelle Young &middot; President, Ace Hardware Home Services</span>
+      <span class="h-line">Prepared by Brian Audia, QAIZR &middot; May 8, 2026</span>
+    </div>
+    <div class="h-rule"></div>
+    <div class="h-eyebrow">Five-Day Agent Sprint &middot; Founding Executive Cohort</div>
+    <h1>Michelle, five days to a working <em>A-Player Recruiting Agent.</em></h1>
+    <div class="engineered">Helpful in the aisle. Helpful in the home. <span class="red-tint">Now, helpful in the hire.</span></div>
+    <p class="hero-clarity">QAIZR installs a working <strong>A-Player Recruiting Agent</strong> in Michelle&rsquo;s seat in five days, alongside a small cohort of other senior operators. <strong>$1,000.</strong> Day-4 Guarantee or every dollar back.</p>
+    <div class="hero-actions">
+      <a href="#offer" class="btn btn--red">Lock The Sprint &middot; $1,000</a>
+      <a href="#plan" class="btn btn--ghost">See The Plan</a>
+    </div>
+    <div class="hero-guarantee">Day-4 Guarantee &middot; Working Agents At Level 4 Or Every Dollar Back</div>
+    <div class="hero-meta">
+      <div class="hm"><span class="k">Who</span><span class="v">Michelle Young, President, AHHS</span></div>
+      <div class="hm"><span class="k">When</span><span class="v">5 live sessions, Mon May 18 through Fri May 22</span></div>
+      <div class="hm"><span class="k">Investment</span><span class="v">$1,000 founding, $1,500 after May 18</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mark">
+      <img src="../Marketing/assets/ace-hs-logo.jpg" alt="Ace Hardware Home Services">
+    </div>
+    <div class="hero-kicker">102 years in the aisle <span class="red-pip"></span> Now in the home <span class="red-pip"></span> Now in the hire</div>
+    <div class="hero-watermark">QAIZR</div>
+  </div>
+</section>
+
+<!-- TLDR -->
+<div class="tldr-band">
+  <div class="tldr-inner">
+    <div class="tldr-tag">
+      The Page In Fifteen Seconds
+      <span class="tldr-sub">Read this if nothing else.</span>
+    </div>
+    <div class="tldr-body">
+      <strong>Helpful in the aisle. Helpful in the home. Now, helpful in the hire.</strong> The Sprint installs the AHHS version of that move at the level where it matters most: working agents that turn the helpful-in-the-aisle story into recruiting copy A-players actually self-select into. Five days, one hour a day, Mon May 18 through Fri May 22. Brian leads the cohort live, and <strong>Michelle is in the room with a small group of other senior operators</strong> running the same build on their own businesses, so the learning compounds across seats and the skills sharpen against real peer work. By Day 4 Michelle has a working <strong>A-Player Recruiting Agent</strong>; by Day 5 the next agent in the chain (a Recruiting-Funnel Agent) is named as Week Two&rsquo;s natural next build. <span class="red">$1,000 founding</span>, against $5,000 of comparable work. <strong>Day-4 Guarantee:</strong> agent at Level 4 or every dollar back.
+    </div>
+  </div>
+</div>
+
+<!-- WHO THIS IS FOR -->
+<section id="character" class="band-warm">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">Who This Is For</div>
+      <h2>This page is written for Michelle Young, the President carrying Ace into the home.</h2>
+      <p class="lede">Before any of the proposal, the page puts AHHS on the record. Everything that follows is written for you specifically: a 102-year-old brand that just stepped into the home, the skilled-labor shortage you are racing against, and the words you used on our May 8 call.</p>
+    </div>
+    <div class="char-grid">
+      <div class="char-cell">
+        <div class="ck">The Brand</div>
+        <div class="cv">Ace Hardware. A 102-year-old brand. The helpful folks. The red-vested heroes who help homeowners get what they need to make their homes a more beautiful place to live. Now extending that helpfulness from the aisle into the home through plumbing, cooling, and electric.</div>
+      </div>
+      <div class="char-cell">
+        <div class="ck">The Company</div>
+        <div class="cv">Ace Hardware Home Services. A subsidiary of Ace Hardware. Skilled-labor delivery in plumbing, cooling, and electric. Live today in Philadelphia, Southern New Jersey, the Lehigh Valley, and Dayton, with the East Coast first and the rest of the United States to follow. A business in growth mode with the parent brand&rsquo;s 102 years of trust as its lead asset.</div>
+      </div>
+      <div class="char-cell">
+        <div class="ck">The Operator</div>
+        <div class="cv">You as President of Ace Hardware Home Services, reporting directly to the CEO of Ace Hardware Corporate. Decision maker. Budget holder. The leader carrying the helpful-in-the-aisle story into helpful-in-the-home, with people, customers, and community as the through-line.</div>
+      </div>
+      <div class="char-cell">
+        <div class="ck">What You Want</div>
+        <div class="cv">In your words on our call: hire for character, train for skill. Grow our own. Tell a story compelling enough that A-players want to come on this journey with us. Capture the momentum the brand is building today, before the window closes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section id="problem" class="band-paper">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">The Problem</div>
+      <h2>Three problems you described on our call, in the order you named them.</h2>
+      <p class="lede">You described the situation at Ace Hardware Home Services on three levels: the visible version, the version that costs you week to week, and the deeper question about the moment AHHS is in. All three live below, attributed, close to your words.</p>
+    </div>
+
+    <div class="problem-row">
+      <div class="pr-tag">
+        What You Are Dealing With
+        <span class="pr-sub">The Visible Problem</span>
+      </div>
+      <div class="pr-body">
+        <h3>A drastic shortage of skilled laborers, and hiring alone is not going to cut it.</h3>
+        <blockquote>&ldquo;On the home services side, we&rsquo;re skilled laborers, and so there is a drastic shortage of skilled laborers in our marketplace today. Hiring isn&rsquo;t going to cut it. We&rsquo;ve got to grow and develop the workforce that we need in order to deliver the results that we want tomorrow.&rdquo;</blockquote>
+        <p>The plumbing, cooling, and electric trades do not have enough qualified people for the demand AHHS is already seeing. Recruiting is not optional and training is not optional, but neither one alone closes the gap. AHHS has to find people fast and grow them on the job, in parallel, in markets that are still scaling. The two motions have to compound, not compete for the same hour.</p>
+      </div>
+    </div>
+
+    <div class="problem-row">
+      <div class="pr-tag">
+        What It Is Costing You
+        <span class="pr-sub">How It Feels Week To Week</span>
+      </div>
+      <div class="pr-body">
+        <h3>The story AHHS tells today is not pulling A-players in.</h3>
+        <blockquote>&ldquo;Today our messaging isn&rsquo;t compelling enough to attract A-players. We need to do a better job of telling our story and getting the right people aligned with it, so that they want to come on this journey with us.&rdquo;</blockquote>
+        <p>AHHS has the strongest story in the trades sitting one floor above it: a 102-year-old helpful brand stepping into the home. The story should pull A-players in on its own. Right now it is not, because the version of the story that lands at the recruiting front door is the generic trades-jobs version, not the helpful-in-the-aisle-to-helpful-in-the-home version. Every week the wrong version is the published version is a week the right candidates self-select out instead of in.</p>
+      </div>
+    </div>
+
+    <div class="problem-row">
+      <div class="pr-tag">
+        What Is At Stake
+        <span class="pr-sub">The Deeper Question</span>
+      </div>
+      <div class="pr-body">
+        <h3>The momentum window is open, and it does not stay open forever.</h3>
+        <blockquote>&ldquo;If we don&rsquo;t solve this hiring problem in the next 12 to 24 months, we will miss this momentum that&rsquo;s building with our organization today. We&rsquo;re starting to pick up more market share. The Ace brand is super strong and people are really resonating with Ace Hardware Home Services. Millions of dollars of lost revenue.&rdquo;</blockquote>
+        <p>A 102-year-old brand making its move into the home is a moment that does not repeat. Market share is being captured now. Demand is showing up now. If the workforce is not in place to meet that demand, the demand finds a competitor with worse trust and a worse story. That is the question this page exists to answer. Sit with it for a moment before you keep reading.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THIS COMPARES -->
+<section id="compare" class="band-paper">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">How This Compares</div>
+      <h2>What AHHS would otherwise do, and what each of those does not solve.</h2>
+      <p class="lede">There are four real options for the hiring-story problem you named. None of them are wrong. But each one solves part of the situation and leaves another part open. The Sprint is on this page because it is built for the part the others leave behind.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <span class="cmp-tag">Option &middot; 01</span>
+        <span class="cmp-cost">$120K to $200K loaded annual cost</span>
+        <h4>Hire a senior employer-brand or recruiting marketing leader.</h4>
+        <p>Three to six months of recruiting before the seat is filled, then another quarter to ramp. Two-year payback at the earliest. Solves the bandwidth problem on a long timeline, but does not put the helpful-in-the-aisle-to-helpful-in-the-home story at the recruiting front door for another six months. The momentum window narrows in the meantime. <strong>The Sprint installs the recruiting system in Michelle&rsquo;s seat in five days, before any new seat would have ramped.</strong></p>
+      </div>
+      <div class="compare-cell">
+        <span class="cmp-tag">Option &middot; 02</span>
+        <span class="cmp-cost">$15K to $40K a month, ongoing</span>
+        <h4>Put a recruiting-marketing agency on retainer.</h4>
+        <p>Ships output. Does not own the story. Twelve months in, AHHS has spent $180K to $480K and the agency still does not know the helpful-folks voice the way Ace knows it. Every campaign is a translation pass through a vendor, and the version that lands sounds like trades-jobs marketing, not Ace. <strong>The Sprint puts the Ace voice and the Ace story at the source, in an agent Michelle owns, so any agency you use ships to a clean brand brief instead of guessing at one.</strong></p>
+      </div>
+      <div class="compare-cell">
+        <span class="cmp-tag">Option &middot; 03</span>
+        <span class="cmp-cost">$1K to $5K a month per tool</span>
+        <h4>Add more recruiting software (ATS, sourcing platforms, AI copy tools).</h4>
+        <p>Adds funnel mechanics. Does not change the story going through the funnel. The bottleneck at AHHS is not how to post a job; it is what the post says when an A-player reads it. Better tools sending the same generic message does not change the conversion rate. <strong>The Sprint installs the agent that writes the right message, so the tools you already have start converting the candidates the brand deserves.</strong></p>
+      </div>
+      <div class="compare-cell">
+        <span class="cmp-tag">Option &middot; 04</span>
+        <span class="cmp-cost">Free to $20 a month, plus your weekends</span>
+        <h4>Learn AI yourself with ChatGPT or Claude.</h4>
+        <p>Possible in theory. The cost is not the subscription, it is the calendar. Six to nine months of weekend learning to reach where the Sprint puts you on Day 4. At the end you have prompts. Prompts are not a system. You do not own a Chief of Staff file the agents read every morning, you do not own the Agent Builder, and the next AHHS function cannot run the same playbook because there is no playbook. <strong>The Sprint is not the AI-learning option. The Sprint is the AI-installed-in-your-seat option. Different category, not a faster version of the same category.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE PROGRAM -->
+<section id="about" class="band-warm">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">About The Program</div>
+      <h2>QAIZR&rsquo;s Five-Day Agent Sprint, sized for one President&rsquo;s seat.</h2>
+      <p class="lede">Two things, in this order: what Ace Hardware Home Services is plugging into, and who is in the room with you every day. Methodology first, deliverer second, so each can be judged on its own merit.</p>
+    </div>
+
+    <div class="cat-framer">
+      <div class="cat-tag">What This Is &middot; What This Is Not</div>
+      <p><strong>Not training. Not consulting. Not an agency engagement. Not software.</strong> The Sprint is a category of one: an Agent Installation. Five days, one hour each, with Brian leading live and a small cohort of other senior operators in the room. Agents built on real AHHS work, sharpened against real peer work. Methodology you keep. Day-4 outcome or every dollar back.</p>
+    </div>
+
+    <div class="cat-framer alt">
+      <div class="cat-tag">Built For</div>
+      <p>Senior operators carrying a brand-led growth motion against a workforce-supply ceiling. Stated values that need to show up in the hiring story, not just on the wall. Documented urgency to capture market share inside a defined window. Buyers who want ROI inside the same week, not next quarter. Operators who have sixty minutes a day, five days running, for one focused week of work. <strong>Michelle is the profile this is built for.</strong></p>
+    </div>
+
+    <div class="cat-framer muted">
+      <div class="cat-tag">Not Built For</div>
+      <p>Multi-team enterprise rollouts. Async, self-paced training programs. Fully done-for-you delivery where the operator does not show up live. Buyers who want a tool to manage instead of a methodology to own. <strong>If that is your situation, one of the four alternatives above is the better starting point. The Sprint stays built for the situation Michelle described on May 8.</strong></p>
+    </div>
+
+    <div class="guide-split">
+      <div class="guide-col">
+        <div class="gc-tag">
+          What You Are Plugging Into
+          <span class="gc-sub">QAIZR&rsquo;s methodology, sharpened across senior-operator engagements.</span>
+        </div>
+        <h3>A People-Powered, AI-Accelerated installation methodology that fits inside one hour a day.</h3>
+        <p>The arc AHHS will run is QAIZR&rsquo;s Five-Day Agent Sprint, refined across QAIZR engagements with senior operators and proven across industries from finance to HR to client services. AHHS is joining a methodology already tested on real organizations, walking out with a working agent on real recruiting work. The methodology is yours to keep and re-run on the next function: technician training, dispatch coordination, customer follow-up, whichever motion needs the same amplification next.</p>
+      </div>
+      <div class="guide-col">
+        <div class="gc-tag">
+          Who Is In The Room With You
+          <span class="gc-sub">Brian Audia, founder and CEO of QAIZR.</span>
+        </div>
+        <h3>Brian Audia spent two decades building People + Process systems for organizations under pressure to do more with less. He installs the AI-Accelerated layer on top so a senior operator ships like a ten-person team.</h3>
+        <p>As founder and CEO of QAIZR, Brian&rsquo;s work is grounded in one conviction: business is a tool for human flourishing. The People-Powered, AI-Accelerated stack he installs at Ace Hardware Home Services starts with your actual seat (your skilled-trades workforce reality, your East-Coast operating footprint, your helpful-in-the-aisle-to-helpful-in-the-home story), turns it into a Chief of Staff file the agents read every morning, then builds the agents that take recruiting-story work off your desk so you can spend the back half of the week leading the growth instead of writing about it.</p>
+      </div>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-cell">
+        <div class="pv">5</div>
+        <div class="pk">Days To A Working Agent</div>
+        <p class="pp">QAIZR&rsquo;s Sprint format installs a working agent in five one-hour sessions, not five months. The agent is live by Day 4, scored on camera against an advisor-derived rubric.</p>
+      </div>
+      <div class="proof-cell">
+        <div class="pv">90<span style="font-size: 0.42em; font-weight: 700; letter-spacing: 0.05em; margin-left: 6px;">MIN</span></div>
+        <div class="pk">Total Daily Investment</div>
+        <p class="pp">Sixty minutes live with the cohort, plus about thirty minutes of applied work on a real AHHS hiring need. Built into Michelle&rsquo;s schedule, not stacked on top of it.</p>
+      </div>
+      <div class="proof-cell">
+        <div class="pv"><span style="font-size: 0.65em; vertical-align: top; margin-right: 4px;">$</span>1K</div>
+        <div class="pk">Founding Cohort Price</div>
+        <p class="pp">Five thousand dollars of comparable work, packaged for one thousand for the founding cohort that locks Mon May 18. The price moves to fifteen hundred after that.</p>
+      </div>
+    </div>
+
+    <div class="attrs-band">
+      <div class="attrs-tag">
+        Five Things The Alternatives Do Not Have
+        <span class="attrs-sub">Verifiable nouns, not adjectives.</span>
+      </div>
+      <div class="attrs-grid">
+        <div class="attrs-cell">
+          <div class="ak">Day-4 Guarantee.</div>
+          <p>Refundable on a Day-4 trigger. If your agent does not pass Level 4 on camera by Thursday, your $1,000 returns the same week. The risk sits on QAIZR&rsquo;s side; you do not carry it.</p>
+        </div>
+        <div class="attrs-cell">
+          <div class="ak">Live cohort, not async.</div>
+          <p>Brian leads each session in real time, with a small group of other senior operators in the room. Michelle&rsquo;s agent reflects AHHS&rsquo;s actual brand voice and hiring profile, sharpened against how peers solve the same problem in their seats.</p>
+        </div>
+        <div class="attrs-cell">
+          <div class="ak">The Agent Builder.</div>
+          <p>The agent that builds the rest, in your hands after Day 3. Every future agent at AHHS (training, dispatch, follow-up, retention) is a one-hour build, not a quarterly project.</p>
+        </div>
+        <div class="attrs-cell">
+          <div class="ak">Methodology playbook.</div>
+          <p>The Sprint stays in your Operate folder after Day 5. The next function at AHHS runs the same five-day arc next month. AHHS owns the playbook; QAIZR is not on retainer.</p>
+        </div>
+        <div class="attrs-cell">
+          <div class="ak">Ninety minutes a day total.</div>
+          <p>Lives inside your week, not stacked on top of it. Sixty minutes live with the cohort, about thirty minutes of applied work on a real AHHS hiring need. No travel, no platform fees. The recruiting system is live on Day 5, not next quarter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF QUOTES BAND -->
+<section class="band-warm">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">What Prior Cohort Operators Said</div>
+      <h2>Three voices from the founding cohort runs that came before this one.</h2>
+      <p class="lede">Sprint operators in their own words after Day 5. Verbatim, attributed, named.</p>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-cell">
+        <blockquote>&ldquo;First AI training I&rsquo;ve taken where I walk out with a working system in hand.&rdquo;</blockquote>
+        <div class="qa">Tommy Rhoads</div>
+        <div class="qm">Sprint Cohort &middot; April 2026</div>
+      </div>
+      <div class="quote-cell">
+        <blockquote>&ldquo;I don&rsquo;t even know what a Python script is, and I now have an AI system that updates my entire business operating system every night at 2 AM while I sleep.&rdquo;</blockquote>
+        <div class="qa">Katie Milton Jordan</div>
+        <div class="qm">CEO, SimpleEDO.ai &middot; Sprint Cohort</div>
+      </div>
+      <div class="quote-cell">
+        <blockquote>&ldquo;With most courses I end up being better informed. Six days into this one I&rsquo;m a badass looking for better problems to solve with the skills I&rsquo;ve learned.&rdquo;</blockquote>
+        <div class="qa">Richard Nicholas</div>
+        <div class="qm">Sprint Cohort &middot; April 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE BAND (RED) -->
+<section class="promise-band">
+  <div class="promise-inner">
+    <div class="sec-tag">The Engineered Sentence</div>
+    <blockquote>Helpful in the aisle. Helpful in the home. <span class="red-bow">Now, helpful in the hire.</span></blockquote>
+    <p>This is the move the Sprint installs. Ace already owns the first two. The third is the natural next chapter, and it is the one that closes the workforce gap. The A-Player Recruiting Agent is the operator who carries that sentence into every recruiting touchpoint AHHS owns, in your voice, at the speed your markets require.</p>
+  </div>
+</section>
+
+<!-- THE PLAN -->
+<section id="plan" class="band-paper">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">The Plan</div>
+      <h2>You weighed the alternatives. Now the question is what five days actually look like.</h2>
+      <p class="lede">Two things below, on purpose. The promise underneath, and the sequence of days that delivers it. Both on the page, so saying yes is the easy part, and so you can think it over with the actual shape of the week in front of you.</p>
+    </div>
+
+    <div class="plan-callout">
+      <div class="pcl">
+        The Promise
+        <span class="pcl-sub">What You Are Guaranteed</span>
+      </div>
+      <div class="pcb">
+        Michelle, you show up for one sixty-minute live session a day for five days, the week of May 18, alongside a small cohort of other senior operators running the same build on their own businesses. Between sessions you put roughly thirty minutes into applied work on a real AHHS hiring need: a job post, a technician spotlight, a recruiter outreach script, whatever is on the desk that week. Not theory. Not make-believe. The agent we build is an agent you can use the next morning. Brian reviews progress in the cohort channel and the rest of the cohort sharpens the work alongside you. By the end of Day 4 you have a working A-Player Recruiting Agent at Level 4, scored on camera against an advisor-derived rubric. Day 5 is the bake-off and the next-week roadmap. That is what the one thousand dollars buys, in writing, on this page.
+      </div>
+    </div>
+
+    <div class="plan-callout">
+      <div class="pcl">
+        The Guarantee
+        <span class="pcl-sub">Day-4 Or Every Dollar Back</span>
+      </div>
+      <div class="pcb">
+        If the AHHS President&rsquo;s seat does not have a working agent at Level 4 by the end of Day 4, scored on camera, every dollar comes back. No clauses, no carve-outs. The risk lives on QAIZR&rsquo;s side of the agreement, not Ace&rsquo;s.
+      </div>
+    </div>
+
+    <div class="weeks">
+      <div class="week-row">
+        <div class="wk-num">DAY 01 &middot; MON MAY 18</div>
+        <div class="wk-title">The Executive AI Operating System.</div>
+        <div class="wk-body">Install the mental model before anyone builds anything. The Eight Levels of AI Execution, from Manual through Documented, Workflow, Agent, Orchestration, Swarm, Self-Governing, Portfolio. We place where the AHHS recruiting motion sits today (mostly Level 0 to 1 inside the President&rsquo;s seat; some Level 2 in any agency-partner workflow), where Level 4 is, and the orders of magnitude in between. Then we open the workspace together and stand up your Ace Hardware Home Services Operate folder, the value chain across the talent motion, and the GAAPC structure inside each function: Goals, Advisors, Agents, Projects, Contacts.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk-num">DAY 02 &middot; TUE MAY 19</div>
+        <div class="wk-title">Your Chief of Staff File.</div>
+        <div class="wk-body">Yesterday we built the body. Today we give it a brain. The Chief of Staff file is the standing context every AHHS agent reads before doing any work. We build yours together in the hour, tuned to the brand: ICP for talent (the A-players AHHS is built to attract), the helpful-folks brand voice encoded as rules, the trades you serve (plumbing, cooling, electric), the East-Coast operating footprint and the national expansion roadmap, the hire-for-character / train-for-skill ethos, the corporate reporting line, and the parent-brand language AHHS inherits from 102 years of Ace Hardware. The file grows with you. Start with three sections; add rules as you find patterns.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk-num">DAY 03 &middot; WED MAY 20</div>
+        <div class="wk-title">Build Your First Agent &middot; The Agent Builder.</div>
+        <div class="wk-body">You have the system. You have the brain. Now you give it hands. Not a prompt, an agent. The Five-File Agent Structure, always the same: Start Here, Golden Example, Process, Context, Quality. Then the meta-move: the Agent Builder, the agent that builds all your other agents. Point it at any repeating deliverable in the AHHS talent motion (recruiting copy, technician spotlight stories, hiring-event content, recruiter outreach scripts) and it stands up the next agent for you. <strong>By the end of this session you have at least one working agent: the A-Player Recruiting Agent. It pulls from the helpful-in-the-aisle-to-helpful-in-the-home story you carry, drafts recruiting-channel copy in the Ace voice, and outputs ready-for-channel posts, ads, scripts, and emails Michelle reviews instead of authors.</strong></div>
+      </div>
+      <div class="week-row">
+        <div class="wk-num">DAY 04 &middot; THU MAY 21</div>
+        <div class="wk-title">Make It Better, Measurably &middot; Day-5 Confirmation.</div>
+        <div class="wk-body">The first pass is never the best pass. Good once is luck, good on purpose is a method. We run the 3-3-3 method live on Michelle&rsquo;s agent. Pick an advisor (Bill Bernbach for craft, David Ogilvy for brand voice, Seth Godin for permission marketing in trades hiring), the advisor is the rubric, four to six criteria scored one to ten, three rounds of three improvements, never edit the source file. Michelle scores her agent against the rubric. <strong>This is also where the Day-5 outcome is confirmed: the A-Player Recruiting Agent at Level 4, scored, on camera.</strong> Then we frame Week Two.</div>
+      </div>
+      <div class="week-row">
+        <div class="wk-num">DAY 05 &middot; FRI MAY 22</div>
+        <div class="wk-title">The Bake-Off &amp; Where Week Two Goes.</div>
+        <div class="wk-body">The session that pulls forward what comes next. We run a friendly bake-off: the agent built during the week is reviewed once more against alternative drafts, the strongest version wins. Then we walk Levels 5 to 8 (Orchestration, Swarm, Self-Governing, Portfolio) using examples from prior cohorts. Ace Hardware Home Services leaves with a clear picture of where Week Two takes you: the natural Level-5 candidate is a Recruiting-Funnel Agent feeding the A-Player Recruiting Agent, so the talent motion runs through one connected system instead of three disconnected ones. Same role, same brand voice, every AHHS function able to run the same Sprint next.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE OFFER -->
+<section id="offer" class="band-warm">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">The Offer</div>
+      <h2>Everything Ace Hardware Home Services gets for the next five days, on one page.</h2>
+      <p class="lede">The investment on the left. The daily rhythm on the right. Nothing hidden, nothing deferred, nothing that arrives later.</p>
+    </div>
+
+    <!-- Math callout at full section width above the price -->
+    <div class="value-math-callout">
+      <div class="vm-tag">Math, Plain</div>
+      <p>You named the cost of leaving the hiring story unsolved at <strong>millions of dollars of lost revenue</strong> over the next 12 to 24 months. The Sprint costs <strong>$1,000</strong>. Skilled-trades recruiting cycles in plumbing, cooling, and electric routinely run <strong>60 to 90 days</strong> from posting to offer. If the A-Player Recruiting Agent compresses one technician cycle by even <strong>30 days</strong>, that is one earlier truck in the field, one earlier billable revenue stream, and one fewer week of demand routed to a competitor. Most recruiting agencies cost five times this Sprint per month and do not leave the agent in your seat at the end.</p>
+    </div>
+
+    <!-- Price block at full section width: price + headline + paragraph in a balanced two-column row -->
+    <div class="price-block">
+      <div class="price-block-left">
+        <div class="cta-price"><span class="d">$</span>1,000</div>
+        <div class="cta-price-sub">Founding Cohort &middot; Locks Mon May 18 &middot; $1,500 After</div>
+      </div>
+      <div class="price-block-right">
+        <h3>One flat investment covering five days, five live sessions, and Michelle&rsquo;s seat in the founding cohort.</h3>
+        <p>A single flat per-seat investment for Michelle&rsquo;s full engagement. Michelle in the room for every session, with Brian leading live and a small group of other senior operators running the same build on their own businesses alongside her, so the learning compounds across seats. One price, one invoice, no platform fees, no surprise line items at the end.</p>
+      </div>
+    </div>
+
+    <!-- The Agreement vs The Daily Rhythm: balanced two-column -->
+    <div class="cta-split">
+      <div class="cta-col">
+        <div class="cta-tag">
+          The Agreement
+          <span class="cta-sub">What is included, what each item is worth.</span>
+        </div>
+        <table class="value-anchor">
+          <thead>
+            <tr><th>What You Are Buying</th><th class="va-amt">Comparable</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Five 60-minute live sessions with Brian, Mon through Fri.</td><td class="va-amt">$1,500</td></tr>
+            <tr><td>Ace Hardware Home Services Chief of Staff file, built live in Day 02.</td><td class="va-amt">$750</td></tr>
+            <tr><td>A-Player Recruiting Agent + the Agent Builder, built live in Day 03.</td><td class="va-amt">$1,500</td></tr>
+            <tr><td>Day-4 Level-4 confirmation + advisor-rubric scoring.</td><td class="va-amt">$750</td></tr>
+            <tr><td>Methodology playbook, yours to re-run on every AHHS function.</td><td class="va-amt">$500</td></tr>
+            <tr class="va-total"><td>Total comparable value</td><td class="va-amt">$5,000</td></tr>
+          </tbody>
+        </table>
+        <ul class="offer-list">
+          <li>Five live sessions with Brian, sixty minutes each.</li>
+          <li>The Ace Hardware Home Services Operate folder &amp; GAAPC structure, stood up live in Day 01.</li>
+          <li>The Ace Hardware Home Services Chief of Staff file, built live with Michelle in Day 02.</li>
+          <li>A working agent at Level 4 by Day 03: the A-Player Recruiting Agent as the natural first build.</li>
+          <li>The Agent Builder in your hands, so the next agent is a Week-Two build, not a quarterly project.</li>
+          <li>Day-4 confirmation: agent scored on camera against an advisor-derived rubric.</li>
+          <li>The Week-Two roadmap and the bake-off, locked in Day 05.</li>
+          <li>Daily coaching from Brian between sessions, in the cohort channel.</li>
+          <li>Access to the QAIZR cohort channel and context library for the duration of the Sprint.</li>
+          <li>Day-4 Guarantee: working agent at Level 4 or every dollar back.</li>
+        </ul>
+      </div>
+      <div class="cta-col">
+        <div class="cta-tag">
+          The Daily Rhythm
+          <span class="cta-sub">What each day looks like.</span>
+        </div>
+        <h3>One live session a day, applied work between, a peer cohort sharpening it alongside you.</h3>
+        <p>Each day follows the same cadence so Michelle is never guessing when the next thing is happening. Show up live with a small cohort of other senior operators, ship real work in your own business, get coached, repeat for five days.</p>
+        <ul class="offer-list">
+          <li>One sixty-minute live session each day, same time, Mon through Fri, with the cohort in the room.</li>
+          <li>About thirty minutes a day of applied work on a real AHHS hiring need: a job post, a technician spotlight, a recruiter outreach script.</li>
+          <li>Not theory. Not make-believe. The agents built during the Sprint are agents you can use the next morning.</li>
+          <li>Brian reviews progress and leaves coaching notes daily in the cohort channel.</li>
+          <li>Peer learning across the cohort: you see how other operators solve the same problem in their seats, and they see how you solve it in yours.</li>
+          <li>Day 4: the agent scored on camera. Day 5: bake-off and Week Two roadmap.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS AT STAKE -->
+<section id="stakes" class="band-paper">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">What Is At Stake</div>
+      <h2>What happens if this conversation ends here and the hiring story stays where it is.</h2>
+      <p class="lede">No manufactured risk. These four costs are already showing up inside Ace Hardware Home Services week over week. They are on the page because they are the reason we are having this conversation in the first place.</p>
+    </div>
+    <div class="failure-grid">
+      <div class="failure-cell">
+        <div class="fk">Risk &middot; 1</div>
+        <h4>The 12 to 24-month momentum window narrows.</h4>
+        <p>In your words: the brand is super strong, market share is being captured, people are resonating with Ace Hardware Home Services right now. A window of that quality does not stay open by inertia. Every quarter the hiring story is generic is a quarter the helpful-in-the-aisle-to-helpful-in-the-home advantage erodes against competitors who do not have it but are louder than AHHS today.</p>
+      </div>
+      <div class="failure-cell">
+        <div class="fk">Risk &middot; 2</div>
+        <h4>Demand finds a competitor instead of finding AHHS.</h4>
+        <p>Customers ready to buy plumbing, cooling, and electric service today do not wait for the workforce that does not exist yet. The leads are being generated. They will land somewhere. Without the hiring engine to convert them, the brand pays the cost of the demand it created and the competitor collects the revenue. You named the dollar magnitude on the call: millions.</p>
+      </div>
+      <div class="failure-cell">
+        <div class="fk">Risk &middot; 3</div>
+        <h4>The A-players self-select out instead of in.</h4>
+        <p>The technicians, electricians, and plumbers AHHS most wants to hire have options. The job posts they read decide whether the brand earns a conversation. When the recruiting story is generic trades-jobs language, the people who would have come on this journey with you read it as another job and keep scrolling. The wrong story does not just slow hiring; it filters out the very people AHHS is built to attract.</p>
+      </div>
+      <div class="failure-cell">
+        <div class="fk">Risk &middot; 4</div>
+        <h4>The system on paper stops mattering.</h4>
+        <p>AHHS already has the values, the brand, the trades footprint, the corporate reporting line, the parent-company trust. None of it is the problem. The problem is the human enforcement layer between the values and the hiring story that gets published. Without an agent in the loop, the values stay on the wall, the recruiting copy stays generic, and the disconnect between Ace&rsquo;s story and AHHS&rsquo;s hiring funnel compounds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE OUTCOME -->
+<section id="outcome" class="band-warm">
+  <div class="s-inner">
+    <div class="s-header">
+      <div class="sec-tag">The Outcome</div>
+      <h2>Tuesday of the following week the talent motion at Ace Hardware Home Services is different. Here is what different looks like.</h2>
+      <p class="lede">One resolved problem per row, mapped to what you named on our call. The future below is a specific one, built around the AHHS President&rsquo;s seat, the trades workforce reality, and the helpful-in-the-aisle-to-helpful-in-the-home story Michelle wants told before the candidate hits apply, not after.</p>
+    </div>
+    <div class="success-grid">
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 1</div>
+        <div class="sw">You walk out with a working agent at Level 4, plus the Agent Builder.</div>
+        <div class="sb">An A-Player Recruiting Agent as the natural first build, owned by Michelle, running on real AHHS recruiting needs and scored on camera against an advisor-derived rubric. Then the Agent Builder, the agent that builds the rest, in your hands, so the next agent (a Recruiting-Funnel Agent) is a Week-Two build, not a quarterly project.</div>
+      </div>
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 2</div>
+        <div class="sw">The Ace Hardware Home Services Chief of Staff file is live and every agent reads it first.</div>
+        <div class="sb">The helpful-folks brand voice, the trades footprint, the East-Coast-to-national operating arc, the hire-for-character / train-for-skill ethos, the parent-brand language: in one place, maintained by Michelle. Every future agent reads it before acting. The work the President does once stops having to be re-explained every time.</div>
+      </div>
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 3</div>
+        <div class="sw">Recruiting copy that sounds like Ace, not like trades-jobs marketing.</div>
+        <div class="sb">The A-Player Recruiting Agent drafts the job posts, the technician-spotlight stories, the hiring-event content, the recruiter outreach scripts in the Ace voice from the first pass. Michelle reviews instead of authoring. The wrong version stops being the published version. A-players self-select in instead of out.</div>
+      </div>
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 4</div>
+        <div class="sw">A second agent in the chain is one Sprint away.</div>
+        <div class="sb">The Recruiting-Funnel Agent feeds candidate flow into the A-Player Recruiting Agent&rsquo;s output. Together they catch the demand the Ace brand is creating and convert it into hires inside the 12 to 24-month window you named, instead of letting it leak to competitors with worse trust and worse stories.</div>
+      </div>
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 5</div>
+        <div class="sw">AHHS has a methodology, not a vendor relationship.</div>
+        <div class="sb">After Day 5, the Sprint methodology lives in your Operate folder. The next function at AHHS (technician training, dispatch, customer follow-up, retention) gets its own Sprint, its own Chief of Staff section, its own agent. Ace Hardware Home Services owns the playbook. The Sprint becomes the template the company runs.</div>
+      </div>
+      <div class="success-row">
+        <div class="sk">Resolved &middot; 6</div>
+        <div class="sw">The hire sounds different.</div>
+        <div class="sb">The candidate reads the post and sees Ace, not generic trades marketing. The technician hired this quarter feels the helpful-folks ethos in the onboarding. The community sees the red-vested-heroes story extended, with skilled tradespeople in the home delivering the same trust the aisle has earned for 102 years. The story tells itself. The work stops being against you.</div>
+      </div>
+    </div>
+
+    <div class="close-final">
+      <div class="cf-tag">The Close</div>
+      <div class="cf-recap">
+        <div class="cf-recap-tag">What You Just Read</div>
+        <p>Five days, one live hour a day with a small cohort of other senior operators, plus about thirty minutes of applied work on real AHHS hiring needs. Mon May 18 through Fri May 22. An A-Player Recruiting Agent that drafts recruiting copy in the Ace voice. A Recruiting-Funnel Agent named as Week Two&rsquo;s natural next build. The methodology in AHHS&rsquo;s Operate folder for every function after this one. Five thousand dollars of comparable work, packaged as the founding investment, yours for one thousand. Day-4 Guarantee: agent at Level 4 or every dollar back.</p>
+      </div>
+      <h3>Helpful in the aisle. Helpful in the home. <span class="red">Now, helpful in the hire.</span></h3>
+      <p>Michelle, you came to the call ready. In a few minutes you named the workforce problem, the messaging gap, and the cost of inaction. You said hiring alone is not going to cut it, that AHHS has to grow its own, that today&rsquo;s message is not compelling enough to attract A-players, and that the cost of leaving it is millions of dollars of lost revenue inside the next 12 to 24 months. The Sprint is the five-day version of the move that fixes that, run live in a cohort of other senior operators so the learning compounds across seats. One hour a day live with the cohort, about thirty minutes of applied work between sessions on real AHHS hiring needs, a working agent by Day 4, the A-Player Recruiting Agent in your seat by the end of the week, the methodology yours to run on every AHHS function from there. You weighed four real alternatives on this page. The Sprint is the one built for the situation you described.</p>
+      <p>When you are ready, lock the Sprint for the week of May 18 and we go. QAIZR will send a one-page agreement and the $1,000 invoice within 24 hours of your reply.</p>
+      <div class="next-steps">
+        <div class="ns-tag">What Happens After You Reply</div>
+        <ol>
+          <li><strong>Within 24 hours.</strong> QAIZR sends a one-page agreement and the $1,000 invoice. Single payment, single line item.</li>
+          <li><strong>Next week.</strong> Five calendar invites for the live cohort sessions, the cohort channel link, and the Day 1 prep note land in Michelle&rsquo;s inbox.</li>
+          <li><strong>Mon May 18, Day 1, 3:00 PM Central, live via virtual video link.</strong> Stand up the AHHS Operate folder and place the recruiting motion on the Eight Levels of AI Execution.</li>
+          <li><strong>Thu May 21, Day 4.</strong> The A-Player Recruiting Agent is scored on camera against the advisor-derived rubric. Pass at Level 4 or above and the engagement continues. Not pass and the full $1,000 returns the same week. No questions, no carve-outs.</li>
+        </ol>
+      </div>
+      <div class="cf-actions">
+        <a href="mailto:myoung@acehomeservicescorp.com?cc=baudia@qzr.ai&amp;subject=Ace%20Hardware%20Home%20Services%20Sprint%20-%20Helpful%20In%20The%20Hire&amp;body=Brian%2C%0A%0AYes%20to%20the%20agreement.%20Please%20send%20the%20invoice.%0A%0ALocking%20the%20cohort%20for%20the%20week%20of%20May%2018.%0A%0AMichelle" class="btn btn--red">Reply &amp; Lock The Cohort</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-label">QAIZR Five-Day Agent Sprint &middot; Custom for Michelle Young, Ace Hardware Home Services</div>
+  <a href="mailto:baudia@qzr.ai" class="f-email">baudia@qzr.ai</a>
+</footer>
+
+</body>
+</html>
